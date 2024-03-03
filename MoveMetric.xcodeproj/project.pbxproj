@@ -1,0 +1,587 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FDB8DA62B94B445008A2503 /* MoveMetricApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DA52B94B445008A2503 /* MoveMetricApp.swift */; };
+		0FDB8DA82B94B445008A2503 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DA72B94B445008A2503 /* ContentView.swift */; };
+		0FDB8DAA2B94B446008A2503 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDB8DA92B94B446008A2503 /* Assets.xcassets */; };
+		0FDB8DAD2B94B446008A2503 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FDB8DAC2B94B446008A2503 /* Preview Assets.xcassets */; };
+		0FDB8DB72B94B446008A2503 /* MoveMetricTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DB62B94B446008A2503 /* MoveMetricTests.swift */; };
+		0FDB8DC12B94B446008A2503 /* MoveMetricUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DC02B94B446008A2503 /* MoveMetricUITests.swift */; };
+		0FDB8DC32B94B446008A2503 /* MoveMetricUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DC22B94B446008A2503 /* MoveMetricUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0FDB8DB32B94B446008A2503 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FDB8D9A2B94B445008A2503 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FDB8DA12B94B445008A2503;
+			remoteInfo = MoveMetric;
+		};
+		0FDB8DBD2B94B446008A2503 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0FDB8D9A2B94B445008A2503 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0FDB8DA12B94B445008A2503;
+			remoteInfo = MoveMetric;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0FDB8DA22B94B445008A2503 /* MoveMetric.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoveMetric.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FDB8DA52B94B445008A2503 /* MoveMetricApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveMetricApp.swift; sourceTree = "<group>"; };
+		0FDB8DA72B94B445008A2503 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0FDB8DA92B94B446008A2503 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FDB8DAC2B94B446008A2503 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0FDB8DB22B94B446008A2503 /* MoveMetricTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoveMetricTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FDB8DB62B94B446008A2503 /* MoveMetricTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveMetricTests.swift; sourceTree = "<group>"; };
+		0FDB8DBC2B94B446008A2503 /* MoveMetricUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoveMetricUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FDB8DC02B94B446008A2503 /* MoveMetricUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveMetricUITests.swift; sourceTree = "<group>"; };
+		0FDB8DC22B94B446008A2503 /* MoveMetricUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveMetricUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FDB8D9F2B94B445008A2503 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FDB8DAF2B94B446008A2503 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FDB8DB92B94B446008A2503 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FDB8D992B94B445008A2503 = {
+			isa = PBXGroup;
+			children = (
+				0FDB8DA42B94B445008A2503 /* MoveMetric */,
+				0FDB8DB52B94B446008A2503 /* MoveMetricTests */,
+				0FDB8DBF2B94B446008A2503 /* MoveMetricUITests */,
+				0FDB8DA32B94B445008A2503 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0FDB8DA32B94B445008A2503 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FDB8DA22B94B445008A2503 /* MoveMetric.app */,
+				0FDB8DB22B94B446008A2503 /* MoveMetricTests.xctest */,
+				0FDB8DBC2B94B446008A2503 /* MoveMetricUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FDB8DA42B94B445008A2503 /* MoveMetric */ = {
+			isa = PBXGroup;
+			children = (
+				0FDB8DA52B94B445008A2503 /* MoveMetricApp.swift */,
+				0FDB8DA72B94B445008A2503 /* ContentView.swift */,
+				0FDB8DA92B94B446008A2503 /* Assets.xcassets */,
+				0FDB8DAB2B94B446008A2503 /* Preview Content */,
+			);
+			path = MoveMetric;
+			sourceTree = "<group>";
+		};
+		0FDB8DAB2B94B446008A2503 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0FDB8DAC2B94B446008A2503 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0FDB8DB52B94B446008A2503 /* MoveMetricTests */ = {
+			isa = PBXGroup;
+			children = (
+				0FDB8DB62B94B446008A2503 /* MoveMetricTests.swift */,
+			);
+			path = MoveMetricTests;
+			sourceTree = "<group>";
+		};
+		0FDB8DBF2B94B446008A2503 /* MoveMetricUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0FDB8DC02B94B446008A2503 /* MoveMetricUITests.swift */,
+				0FDB8DC22B94B446008A2503 /* MoveMetricUITestsLaunchTests.swift */,
+			);
+			path = MoveMetricUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FDB8DA12B94B445008A2503 /* MoveMetric */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FDB8DC62B94B446008A2503 /* Build configuration list for PBXNativeTarget "MoveMetric" */;
+			buildPhases = (
+				0FDB8D9E2B94B445008A2503 /* Sources */,
+				0FDB8D9F2B94B445008A2503 /* Frameworks */,
+				0FDB8DA02B94B445008A2503 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MoveMetric;
+			productName = MoveMetric;
+			productReference = 0FDB8DA22B94B445008A2503 /* MoveMetric.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0FDB8DB12B94B446008A2503 /* MoveMetricTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FDB8DC92B94B446008A2503 /* Build configuration list for PBXNativeTarget "MoveMetricTests" */;
+			buildPhases = (
+				0FDB8DAE2B94B446008A2503 /* Sources */,
+				0FDB8DAF2B94B446008A2503 /* Frameworks */,
+				0FDB8DB02B94B446008A2503 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FDB8DB42B94B446008A2503 /* PBXTargetDependency */,
+			);
+			name = MoveMetricTests;
+			productName = MoveMetricTests;
+			productReference = 0FDB8DB22B94B446008A2503 /* MoveMetricTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0FDB8DBB2B94B446008A2503 /* MoveMetricUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FDB8DCC2B94B446008A2503 /* Build configuration list for PBXNativeTarget "MoveMetricUITests" */;
+			buildPhases = (
+				0FDB8DB82B94B446008A2503 /* Sources */,
+				0FDB8DB92B94B446008A2503 /* Frameworks */,
+				0FDB8DBA2B94B446008A2503 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0FDB8DBE2B94B446008A2503 /* PBXTargetDependency */,
+			);
+			name = MoveMetricUITests;
+			productName = MoveMetricUITests;
+			productReference = 0FDB8DBC2B94B446008A2503 /* MoveMetricUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FDB8D9A2B94B445008A2503 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					0FDB8DA12B94B445008A2503 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					0FDB8DB12B94B446008A2503 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 0FDB8DA12B94B445008A2503;
+					};
+					0FDB8DBB2B94B446008A2503 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 0FDB8DA12B94B445008A2503;
+					};
+				};
+			};
+			buildConfigurationList = 0FDB8D9D2B94B445008A2503 /* Build configuration list for PBXProject "MoveMetric" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0FDB8D992B94B445008A2503;
+			productRefGroup = 0FDB8DA32B94B445008A2503 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FDB8DA12B94B445008A2503 /* MoveMetric */,
+				0FDB8DB12B94B446008A2503 /* MoveMetricTests */,
+				0FDB8DBB2B94B446008A2503 /* MoveMetricUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FDB8DA02B94B445008A2503 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FDB8DAD2B94B446008A2503 /* Preview Assets.xcassets in Resources */,
+				0FDB8DAA2B94B446008A2503 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FDB8DB02B94B446008A2503 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FDB8DBA2B94B446008A2503 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FDB8D9E2B94B445008A2503 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FDB8DA82B94B445008A2503 /* ContentView.swift in Sources */,
+				0FDB8DA62B94B445008A2503 /* MoveMetricApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FDB8DAE2B94B446008A2503 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FDB8DB72B94B446008A2503 /* MoveMetricTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0FDB8DB82B94B446008A2503 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FDB8DC12B94B446008A2503 /* MoveMetricUITests.swift in Sources */,
+				0FDB8DC32B94B446008A2503 /* MoveMetricUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0FDB8DB42B94B446008A2503 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FDB8DA12B94B445008A2503 /* MoveMetric */;
+			targetProxy = 0FDB8DB32B94B446008A2503 /* PBXContainerItemProxy */;
+		};
+		0FDB8DBE2B94B446008A2503 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0FDB8DA12B94B445008A2503 /* MoveMetric */;
+			targetProxy = 0FDB8DBD2B94B446008A2503 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0FDB8DC42B94B446008A2503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0FDB8DC52B94B446008A2503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FDB8DC72B94B446008A2503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MoveMetric/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = in.edu.srmist.MoveMetric;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0FDB8DC82B94B446008A2503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MoveMetric/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = in.edu.srmist.MoveMetric;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0FDB8DCA2B94B446008A2503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = in.edu.srmist.MoveMetricTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoveMetric.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MoveMetric";
+			};
+			name = Debug;
+		};
+		0FDB8DCB2B94B446008A2503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = in.edu.srmist.MoveMetricTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MoveMetric.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MoveMetric";
+			};
+			name = Release;
+		};
+		0FDB8DCD2B94B446008A2503 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = in.edu.srmist.MoveMetricUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoveMetric;
+			};
+			name = Debug;
+		};
+		0FDB8DCE2B94B446008A2503 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = in.edu.srmist.MoveMetricUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MoveMetric;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FDB8D9D2B94B445008A2503 /* Build configuration list for PBXProject "MoveMetric" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FDB8DC42B94B446008A2503 /* Debug */,
+				0FDB8DC52B94B446008A2503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FDB8DC62B94B446008A2503 /* Build configuration list for PBXNativeTarget "MoveMetric" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FDB8DC72B94B446008A2503 /* Debug */,
+				0FDB8DC82B94B446008A2503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FDB8DC92B94B446008A2503 /* Build configuration list for PBXNativeTarget "MoveMetricTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FDB8DCA2B94B446008A2503 /* Debug */,
+				0FDB8DCB2B94B446008A2503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FDB8DCC2B94B446008A2503 /* Build configuration list for PBXNativeTarget "MoveMetricUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FDB8DCD2B94B446008A2503 /* Debug */,
+				0FDB8DCE2B94B446008A2503 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0FDB8D9A2B94B445008A2503 /* Project object */;
+}
