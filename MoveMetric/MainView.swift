@@ -1,4 +1,5 @@
 import SwiftUI
+import UserNotifications
 
 struct MainView: View {
     @State private var reminders: [ExerciseReminder] = []
@@ -21,7 +22,7 @@ struct MainView: View {
                                     .font(.title2)
                                     .bold()
                                     .foregroundColor(.black)
-                                Text("Date: \(formattedDate(reminders[index].date))")
+                                Text("Days: \(reminders[index].formattedDaysOfWeek())") // Display days of the week
                                     .foregroundColor(.black)
                                 Text("Time: \(formattedTime(reminders[index].time))")
                                     .foregroundColor(.black)
@@ -30,7 +31,6 @@ struct MainView: View {
                             .padding()
                             .background(Color.orange)
                             .cornerRadius(12)
-                            .padding(.horizontal)
                             .contextMenu {
                                 Button(action: {
                                     // Delete button action
@@ -43,7 +43,7 @@ struct MainView: View {
                         }
                     }
                     .frame(maxWidth: .infinity)
-                    .padding(.top) // Add padding to cover the entire screen
+                    .padding()
                 }
             }
             .navigationBarTitle("Reminders", displayMode: .large)
@@ -67,13 +67,7 @@ struct MainView: View {
                 loadReminders()
             }
         }
-        .background(.black)
-    }
-
-    func formattedDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        return formatter.string(from: date)
+        .background(Color.black)
     }
 
     func formattedTime(_ time: Date) -> String {
