@@ -22,14 +22,14 @@ struct OnboardingView: View {
                 Text("Metric")
                     .font(.largeTitle)
             }
-            .padding(.top, 40)
+            .padding(.top, 20)
             
             TabView(selection: $currentPage) {
-                SplashScreenView(text: "Simply book a pal to look after your pet at your own home",text2: "", imageName: "Yoga practice-bro", currentPage: $currentPage)
+                SplashScreenView(text: "Your personal fitness companion to track and achieve your exercise goals.",text2: "", imageName: "Yoga practice-bro", currentPage: $currentPage)
                     .tag(0)
-                SplashScreenView(text: "Seamlessly book our pals to walk your pet",text2: "" , imageName: "Workout-cuate", currentPage: $currentPage)
+                SplashScreenView(text: "Use Exercise button to perform new exercises.",text2: "" , imageName: "Workout-cuate", currentPage: $currentPage)
                     .tag(1)
-                SplashScreenView(text: "Seamlessly book overnight stays for your pet",text2: "", imageName: "Workout-amico", currentPage: $currentPage)
+                SplashScreenView(text: "Select Reminders option to set reminder for you exercise.",text2: "", imageName: "Workout-amico", currentPage: $currentPage)
                     .tag(2)
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
