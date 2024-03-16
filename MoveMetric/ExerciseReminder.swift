@@ -5,22 +5,16 @@
 //  Created by user2 on 17/02/24.
 
 import Foundation
+import UserNotifications
 
-struct ExerciseReminder: Codable ,Identifiable{
-    let id = UUID()
+struct ExerciseReminder: Codable ,Identifiable {
+    var id = UUID()
     let title: String
     let exerciseName: String
-    let date: Date
+    let daysOfWeek: [String] // Modified to store days of the week
     let time: Date
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
+
+    func formattedDaysOfWeek() -> String {
+        return daysOfWeek.joined(separator: ", ")
     }
-    
-    static func == (lhs: ExerciseReminder, rhs: ExerciseReminder) -> Bool {
-        return lhs.id == rhs.id
-    }
-}
-struct ReminderDatabase {
-    static var reminders: [ExerciseReminder] = []
 }

@@ -15,17 +15,20 @@ struct BoardingView: View {
                             .padding()
                         
                         VStack(alignment: .leading, spacing: 20) {
-                            Text("Welcome to the App!")
+                            Text("MoveMetric")
                                 .font(.title)
                                 .fontWeight(.bold)
                                 .foregroundColor(.orange)
+                                .multilineTextAlignment(.center)
                             
                             Text("This app helps you track your exercises and set reminders.")
-                                .font(.body)
                                 
+                                .font(.subheadline)
                                 .foregroundColor(.black)
                                 .fixedSize(horizontal: false, vertical: true)
                                 .truncationMode(.tail)
+                               
+                                
                                 
                                 
                             

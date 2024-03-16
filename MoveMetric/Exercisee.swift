@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserNotifications
 
 struct Exercisee: Identifiable { // Change to singular form 'Exercise'
     let id = UUID()
