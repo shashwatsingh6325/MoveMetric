@@ -1,62 +1,111 @@
+//
+//  OnboardingView.swift
+//  PetPals
+//
+//  Created by Avya Rathod on 09/12/23.
+//
+
 import SwiftUI
 
 struct OnboardingView: View {
-    @State private var showWelcomeMessage = false
-    @State private var redirectToNextPage = false
+    @Binding var isOnboardingCompleted: Bool
+    @State private var currentPage = 0
     
     var body: some View {
-            NavigationView{
-                VStack {
-                    // Image occupying 2/3 of the page
-                    Image("p2bg")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(height: UIScreen.main.bounds.height * 2 / 3)
-                    
-                    // Welcome title
-                    Text("Welcome to Move Metric")
-                        .font(.title2)
-                        .foregroundColor(.orange)
-                        .fontWeight(.bold)
-                        .padding(.top, -70)
-                        .padding(.bottom,-50)
-                    
-                    // Description
-                    Text("Your personal fitness companion to track and achieve your exercise goals.")
-                        .font(.subheadline)
-                        .foregroundColor(.gray)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 30)
-                        .padding(.bottom, 30)
-                        .padding(.top, -33)
-                    
-                }
-                .padding()
-                .onAppear {
-                    // Show welcome message after 1 second
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
-                        self.showWelcomeMessage = true
-                    }
-                    
-                    // Redirect to next page after 2 seconds
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.25) {
-                        redirectToNextPage = true
-                    }
-                }
-                .background(
-                    NavigationLink(destination:BoardingView(), isActive: $redirectToNextPage) {
-                        EmptyView()
-                    }
-                )
-                
-            }
+        VStack {
+            Spacer()
             
+            HStack(spacing: -1) {
+                Text("Move")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Text("Metric")
+                    .font(.largeTitle)
+            }
+            .padding(.top, 40)
+            
+            TabView(selection: $currentPage) {
+                SplashScreenView(text: "Simply book a pal to look after your pet at your own home",text2: "", imageName: "Yoga practice-bro", currentPage: $currentPage)
+                    .tag(0)
+                SplashScreenView(text: "Seamlessly book our pals to walk your pet",text2: "" , imageName: "Workout-cuate", currentPage: $currentPage)
+                    .tag(1)
+                SplashScreenView(text: "Seamlessly book overnight stays for your pet",text2: "", imageName: "Workout-amico", currentPage: $currentPage)
+                    .tag(2)
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .frame(height: 500)
+            
+            Spacer()
+            
+            HStack {
+                HStack(spacing: 8) {
+                    ForEach(0..<3, id: \.self) { index in
+                        Circle()
+                            .fill(currentPage == index ? Color.blue : Color.gray)
+                            .frame(width: 8, height: 8)
+                    }
+                }
+                .padding(.leading)
+                
+                Spacer()
+                
+                Button(action: {
+                    // Skip all pages and move to the home screen
+                    isOnboardingCompleted = true
+                    UserDefaults.standard.set(true, forKey: "isOnboardingCompleted")
+                }) {
+                    Text("Skip")
+                        .padding()
+                        .background(Circle().fill(Color.orange))
+                        .foregroundColor(.white)
+                }
+                .padding(.trailing)
+                
+                // Navigation link to ContentView
+                NavigationLink(destination: ContentView(), isActive: $isOnboardingCompleted) {
+                    EmptyView()
+                }
+            }
         }
-  
-}
-
-struct OnboardingView_Previews: PreviewProvider {
-    static var previews: some View {
-        OnboardingView()
+        .transition(.slide)
     }
 }
+
+
+
+struct SplashScreenView: View {
+    let text: String
+    let text2: String
+    let imageName: String
+    @Binding var currentPage: Int
+    var body: some View {
+        VStack {
+            // Placeholder for image
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .frame(height: 300)
+            
+            // Text content of the splash screen
+            Text(text)
+                .font(.title)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+            
+            Text(text2)
+                .font(.callout)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+        }
+    }
+}
+
+#if DEBUG
+struct OnboardingView_Previews: PreviewProvider {
+    @State static var isOnboardingCompleted = false
+
+    static var previews: some View {
+        OnboardingView(isOnboardingCompleted: $isOnboardingCompleted)
+    }
+}
+#endif

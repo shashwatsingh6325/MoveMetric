@@ -31,7 +31,6 @@
 		0FDB8DDC2B94B594008A2503 /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DDB2B94B594008A2503 /* InstructionsView.swift */; };
 		0FDB8DDE2B94B5B5008A2503 /* Text2Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DDD2B94B5B5008A2503 /* Text2Speech.swift */; };
 		0FDB8DE02B94B623008A2503 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DDF2B94B623008A2503 /* OnboardingView.swift */; };
-		0FDB8DE22B94B638008A2503 /* BoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DE12B94B638008A2503 /* BoardingView.swift */; };
 		0FDB8DE42B94B67C008A2503 /* JsonWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DE32B94B67C008A2503 /* JsonWriter.swift */; };
 		0FDB8DE62B94B69C008A2503 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DE52B94B69C008A2503 /* Timer.swift */; };
 		0FDB8DE82B94B6B4008A2503 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB8DE72B94B6B4008A2503 /* AboutView.swift */; };
@@ -79,7 +78,6 @@
 		0FDB8DDB2B94B594008A2503 /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
 		0FDB8DDD2B94B5B5008A2503 /* Text2Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text2Speech.swift; sourceTree = "<group>"; };
 		0FDB8DDF2B94B623008A2503 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		0FDB8DE12B94B638008A2503 /* BoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingView.swift; sourceTree = "<group>"; };
 		0FDB8DE32B94B67C008A2503 /* JsonWriter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonWriter.swift; sourceTree = "<group>"; };
 		0FDB8DE52B94B69C008A2503 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		0FDB8DE72B94B6B4008A2503 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
@@ -140,7 +138,6 @@
 			children = (
 				0FDB8DA52B94B445008A2503 /* MoveMetricApp.swift */,
 				0FDB8DDF2B94B623008A2503 /* OnboardingView.swift */,
-				0FDB8DE12B94B638008A2503 /* BoardingView.swift */,
 				0FDB8DA72B94B445008A2503 /* ContentView.swift */,
 				0FDB8DE32B94B67C008A2503 /* JsonWriter.swift */,
 				0FDB8DE52B94B69C008A2503 /* Timer.swift */,
@@ -338,7 +335,6 @@
 				0FDB8DD02B94B499008A2503 /* HistoryView.swift in Sources */,
 				0FDB8DA62B94B445008A2503 /* MoveMetricApp.swift in Sources */,
 				0F30782E2B961BBC0029332E /* Exercisee.swift in Sources */,
-				0FDB8DE22B94B638008A2503 /* BoardingView.swift in Sources */,
 				0F30782C2B961B9E0029332E /* ExerciseReminder.swift in Sources */,
 				0F3078282B961B560029332E /* MainView.swift in Sources */,
 				0FDB8DD62B94B535008A2503 /* WorkoutView.swift in Sources */,

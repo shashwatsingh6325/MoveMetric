@@ -33,9 +33,16 @@ let exercises = [
 
 @main
 struct MoveMetricApp: App {
+    @State private var isOnboardingCompleted = false // Add state variable
     var body: some Scene {
         WindowGroup {
-            OnboardingView()
+            if isOnboardingCompleted {
+                ContentView()
+            } else {
+                OnboardingView(isOnboardingCompleted: $isOnboardingCompleted)
+            }
         }
     }
 }
+
+
