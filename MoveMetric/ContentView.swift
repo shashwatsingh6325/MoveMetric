@@ -16,17 +16,25 @@ struct ContentView: View {
     @StateObject var sessionConfig = SessionConfig()
 
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $viewModel.path){
             TabView {
-                NavigationView {
-                    List(exercises) { exercise in
-                        NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
-                                        .environmentObject(viewModel)
-                                        .environmentObject(sessionConfig)) {
-                            ExerciseRowView(exercise: exercise)
-                        }
-                    }
-                    .navigationBarTitle("Exercises")
+//                NavigationView {
+//                    ScrollView(.horizontal, showsIndicators: false) {
+//                        HStack(spacing: 10) {
+//                            ForEach(exercises) { exercise in
+//                                NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
+//                                                .environmentObject(viewModel)
+//                                                .environmentObject(sessionConfig)) {
+//                                                    ExerciseRowView(exercise: exercise,palPets: "", imageName: "")
+//                                }
+//                            }
+//                        }
+//                        .padding(.horizontal)
+//                    }
+//                    .navigationBarTitle("Exercises")
+//                }
+                NavigationView{
+                    HomeView()
                 }
                 .tabItem {
                     Label("Exercises", systemImage: "figure.strengthtraining.functional")
@@ -48,27 +56,54 @@ struct ContentView: View {
 
 struct ExerciseRowView: View {
     let exercise: Exercise
+//    var palName: String
+    var palPets: String
+    var imageName: String
+    @State private var isFavorite: Bool = false
 
     var body: some View {
-        VStack(alignment: .center) {
-            Text(exercise.name)
-                .frame(width: 230,height: 30)
-                .font(.headline)
-                .foregroundColor(.primary)
-                .padding()
-                .background(Color.orange)
-                .cornerRadius(8)
-                .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 2)
-                .padding(.horizontal)
-                .padding(.vertical, 4)
+        VStack(alignment: .leading, spacing: 0) {
+            ZStack(alignment: .topTrailing) {
+                Image(exercise.imageName)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 150, height: 150)
+                    .clipped()
+                    .cornerRadius(8)
+                    .shadow(radius:10)
+
+                
+                Button(action: {
+                    isFavorite.toggle()
+                }) {
+                    Image(systemName: isFavorite ? "heart.fill" : "heart")
+                        .foregroundColor(isFavorite ? .red : .white)
+                        .padding(8)
+                        .background(Color.black.opacity(0.2))
+                        .clipShape(Circle())
+                    
+                }
+                .offset(x: -5, y: 10)
+            }
+            
+            VStack(alignment: .leading, spacing: 0){
+                Text(exercise.name)
+                    .font(.headline)
+                    .foregroundColor(.black)
+                    .lineLimit(1)
+                Text(palPets)
+                    .font(.subheadline)
+                    .foregroundColor(.black)
+                    .lineLimit(1)
+            }.padding([.vertical],3)
         }
-        .padding(.leading,20)
+        .frame(width: 150, height: 190)
+        .background(Color.clear)
+        .cornerRadius(8)
+        
+
     }
 }
-
-
-
-
 
 class ViewModel: ObservableObject {
     @Published var path = NavigationPath()

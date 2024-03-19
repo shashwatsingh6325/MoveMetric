@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "young-beautiful-sportive-girl-training-with-dumbbells-dark-wall.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
