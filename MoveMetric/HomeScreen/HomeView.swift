@@ -18,10 +18,23 @@ struct HomeView: View {
             ScrollView {
                 VStack(alignment: .leading) {
                     // Search Bar
-                    TextField("Looking for Specific Exercises?...", text: $searchText)
+                    Text("Looking")
+                        .bold()
+                        .font(.title)
+                        .padding(.horizontal,70)
+                        .padding(.top,10)
+                                        
+                    Text("for Specific Exercises?...")
+                        .padding(.horizontal,70)
+                    
+                    TextField("Search here !!!", text: $searchText)
                         .textFieldStyle(.roundedBorder)
                         .padding()
                         .padding(.horizontal,50)
+                        .padding(.vertical,-20)
+                    
+                    ReviewsView()
+                        .padding(.top,3)
                     
                     // Services Offered Section
                     Text("Explore Workouts")
@@ -30,7 +43,7 @@ struct HomeView: View {
                         .padding(.leading)
                         .padding(.horizontal,50)
                     
-                    HStack(spacing:-10) {
+                    HStack(spacing: -10) {
                         ServiceView(serviceName: "Core", serviceImage: "beautiful-young-slim-woman-doing-stretching-exercises-gym-against-white-studio")
                         ServiceView(serviceName: "Back", serviceImage: "young-beautiful-sportive-girl-training-with-dumbbells-dark-wall")
                         ServiceView(serviceName: "Chest", serviceImage: "portrait-athletic-muscular-shirtless-middle-age-male-holds-dumbbell")
@@ -64,7 +77,7 @@ struct HomeView: View {
                     .padding(.horizontal,68)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: -10) {
+                        HStack(spacing: 1) {
                             ForEach(exercises) { exercise in
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
@@ -100,7 +113,7 @@ struct HomeView: View {
                     .padding(.horizontal,68)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: -10) {
+                        HStack(spacing: 1) {
                             ForEach(exercises) { exercise in
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
@@ -137,7 +150,7 @@ struct HomeView: View {
                     .padding(.horizontal,68)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: -10) {
+                        HStack(spacing: 1) {
                             ForEach(exercises) { exercise in
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
@@ -176,7 +189,7 @@ struct HomeView: View {
                     
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: -10) {
+                        HStack(spacing: 1) {
                             ForEach(exercises) { exercise in
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
@@ -213,7 +226,7 @@ struct HomeView: View {
                     .padding(.horizontal,68)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: -10) {
+                        HStack(spacing: 1) {
                             ForEach(exercises) { exercise in
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
@@ -249,7 +262,7 @@ struct HomeView: View {
                     .padding(.horizontal,68)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: -10) {
+                        HStack(spacing: 1) {
                             ForEach(exercises) { exercise in
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)

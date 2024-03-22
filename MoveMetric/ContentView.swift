@@ -6,7 +6,7 @@ class SessionConfig: ObservableObject {
     @Published var nMinutes : Int = 0
     @Published var nSeconds : Int = 1
     @Published var useReps: Bool = true
-    @Published var exercise: Exercise = exercises[0] // use first exercise by default but change in the ExerciseDetailsView
+    @Published var exercise: Exercise = exercises[0]
 }
 
 
@@ -18,21 +18,6 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $viewModel.path){
             TabView {
-//                NavigationView {
-//                    ScrollView(.horizontal, showsIndicators: false) {
-//                        HStack(spacing: 10) {
-//                            ForEach(exercises) { exercise in
-//                                NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
-//                                                .environmentObject(viewModel)
-//                                                .environmentObject(sessionConfig)) {
-//                                                    ExerciseRowView(exercise: exercise,palPets: "", imageName: "")
-//                                }
-//                            }
-//                        }
-//                        .padding(.horizontal)
-//                    }
-//                    .navigationBarTitle("Exercises")
-//                }
                 NavigationView{
                     HomeView()
                 }
@@ -48,9 +33,9 @@ struct ContentView: View {
                     .tag(1)
             }
             .accentColor(.orange)
-            .navigationViewStyle(StackNavigationViewStyle()) // Ensure consistent navigation behavior
+            .navigationViewStyle(StackNavigationViewStyle())
         }
-        .navigationBarHidden(true) // Hide the main navigation bar
+        .navigationBarHidden(true) 
     }
 }
 
@@ -91,6 +76,7 @@ struct ExerciseRowView: View {
                     .font(.headline)
                     .foregroundColor(.black)
                     .lineLimit(1)
+                    .padding(.horizontal,7)
                 Text(palPets)
                     .font(.subheadline)
                     .foregroundColor(.black)
@@ -109,7 +95,7 @@ class ViewModel: ObservableObject {
     @Published var path = NavigationPath()
     
     func popToRoot(){
-        path.removeLast(path.count) // pop to root
+        path.removeLast(path.count)
     }
 }
 

@@ -31,7 +31,7 @@ struct OptionsView: View {
                         .fill(Color.white)
                         .overlay(
                             RoundedRectangle(cornerRadius: 12)
-                                .stroke(Color.white, lineWidth: 1)
+                                .stroke(Color.primary, lineWidth: 1)
                         )
                         
         )

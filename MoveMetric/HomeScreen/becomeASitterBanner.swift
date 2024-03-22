@@ -16,7 +16,7 @@ struct becomeASitterBanner: View {
                 .frame(width: UIScreen.main.bounds.width - 20)
                 .frame(height: 250.0)
                 .cornerRadius(10)
-                .blur(radius: 2)
+                .opacity(0.6)
             
             VStack(alignment: .leading, spacing: 0) {
                 Text("Are you ready for challange ?")
@@ -24,11 +24,13 @@ struct becomeASitterBanner: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .shadow(radius: 5)
+                    
                 
                 Text("Click the button below and explore our fitness challanges.")
                     .foregroundColor(.white)
                     .padding(.bottom, 20)
                     .shadow(radius: 5)
+                    
                 
                 NavigationLink(destination: UserProfileView()) {
                     Text("Lets get started !!")

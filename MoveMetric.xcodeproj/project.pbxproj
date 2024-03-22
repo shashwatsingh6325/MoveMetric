@@ -44,6 +44,7 @@
 		6BDC19542BA8D1E700212903 /* becomeASitterBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC19532BA8D1E700212903 /* becomeASitterBanner.swift */; };
 		6BDC19562BA8D20000212903 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC19552BA8D20000212903 /* UserProfileView.swift */; };
 		6BDC19582BA8D21900212903 /* PalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDC19572BA8D21900212903 /* PalView.swift */; };
+		6BDD83622BAB48E100F499C7 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDD83612BAB48E100F499C7 /* ReviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		6BDC19532BA8D1E700212903 /* becomeASitterBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = becomeASitterBanner.swift; sourceTree = "<group>"; };
 		6BDC19552BA8D20000212903 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		6BDC19572BA8D21900212903 /* PalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalView.swift; sourceTree = "<group>"; };
+		6BDD83612BAB48E100F499C7 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +218,7 @@
 				6BDC19532BA8D1E700212903 /* becomeASitterBanner.swift */,
 				6BDC19552BA8D20000212903 /* UserProfileView.swift */,
 				6BDC19572BA8D21900212903 /* PalView.swift */,
+				6BDD83612BAB48E100F499C7 /* ReviewView.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				6BDC19542BA8D1E700212903 /* becomeASitterBanner.swift in Sources */,
 				0FDB8DE62B94B69C008A2503 /* Timer.swift in Sources */,
 				6BDC19522BA8D1CE00212903 /* FavPalView.swift in Sources */,
+				6BDD83622BAB48E100F499C7 /* ReviewView.swift in Sources */,
 				0FDB8DDC2B94B594008A2503 /* InstructionsView.swift in Sources */,
 				6BDC194C2BA8D17B00212903 /* item.swift in Sources */,
 				0FDB8DD42B94B50A008A2503 /* QuickPoseBasicView.swift in Sources */,
