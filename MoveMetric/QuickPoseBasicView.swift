@@ -165,14 +165,27 @@ struct QuickPoseBasicView: View {
                     }
                 }
                 
-                .onChange(of: state) { _ in
-                    if case .results(let result) = state {
-                        let sessionDataDump = SessionDataModel(exercise: sessionConfig.exercise.name, count: result.count, seconds: result.seconds, date: Date())
+                .onChange(of: state) { newState in
+                    if case .results = newState {
+                        let sessionDataDump = SessionDataModel(exercise: sessionConfig.exercise.name, count: counter.state.count, seconds: 0, date: Date())
                         appendToJson(sessionData: sessionDataDump)
                     }
-                    
                     quickPose.update(features: sessionConfig.exercise.features)
+                    
+                    if case .exercise(_, let enterDate) = newState {
+                        let hasFinished: Bool
+                        if sessionConfig.useReps {
+                            hasFinished = counter.state.count >= sessionConfig.nReps
+                        } else {
+                            let secondsElapsed = Int(-enterDate.timeIntervalSinceNow)
+                            hasFinished = secondsElapsed >= sessionConfig.nSeconds + sessionConfig.nMinutes * 60
+                        }
+                        if hasFinished {
+                            state = .results(SessionData(count: counter.state.count, seconds: 0))
+                        }
+                    }
                 }
+
                 .onAppear() {
                     UIApplication.shared.isIdleTimerDisabled = true
                     DispatchQueue.main.asyncAfter(deadline: .now()+1.0){
@@ -239,7 +252,7 @@ struct QuickPoseBasicView: View {
                                     
                                     if hasFinished {
                                         state = .results(newResults)
-                                        quickPose.stop()
+//                                        quickPose.stop()
                                     }
                                 default:
                                     break

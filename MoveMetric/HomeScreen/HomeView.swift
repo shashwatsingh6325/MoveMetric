@@ -37,7 +37,7 @@ struct HomeView: View {
                         .padding(.top,3)
                     
                     // Services Offered Section
-                    Text("Explore Workouts")
+                    Text("Favourite Workouts")
                         .font(.headline)
                         .foregroundColor(.black) // Text color set to white
                         .padding(.leading)
@@ -61,18 +61,18 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-                            HStack(spacing: 6.0) {
-                                Text("View All")
-                                    .foregroundColor(.white)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.white)
-                                
-                            }
-                            .padding(6.0)
-                        }
-                        .background(Color.orange)
-                        .cornerRadius(15)
+//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
+//                            HStack(spacing: 6.0) {
+//                                Text("View All")
+//                                    .foregroundColor(.white)
+//                                Image(systemName: "chevron.right")
+//                                    .foregroundColor(.white)
+//                                
+//                            }
+//                            .padding(6.0)
+//                        }
+//                        .background(Color.orange)
+//                        .cornerRadius(15)
                     }
                     .padding(.horizontal,68)
                     
@@ -97,18 +97,18 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-                            HStack(spacing: 6.0) {
-                                Text("View All")
-                                    .foregroundColor(.white)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.white)
-                                
-                            }
-                            .padding(6.0)
-                        }
-                        .background(Color.orange)
-                        .cornerRadius(15)
+//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
+//                            HStack(spacing: 6.0) {
+//                                Text("View All")
+//                                    .foregroundColor(.white)
+//                                Image(systemName: "chevron.right")
+//                                    .foregroundColor(.white)
+//                                
+//                            }
+//                            .padding(6.0)
+//                        }
+//                        .background(Color.orange)
+//                        .cornerRadius(15)
                     }
                     .padding(.horizontal,68)
                     
@@ -134,18 +134,18 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-                            HStack(spacing: 6.0) {
-                                Text("View All")
-                                    .foregroundColor(.white)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.white)
-                                
-                            }
-                            .padding(6.0)
-                        }
-                        .background(Color.orange)
-                        .cornerRadius(15)
+//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
+//                            HStack(spacing: 6.0) {
+//                                Text("View All")
+//                                    .foregroundColor(.white)
+//                                Image(systemName: "chevron.right")
+//                                    .foregroundColor(.white)
+//                                
+//                            }
+//                            .padding(6.0)
+//                        }
+//                        .background(Color.orange)
+//                        .cornerRadius(15)
                     }
                     .padding(.horizontal,68)
                     
@@ -172,18 +172,18 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-                            HStack(spacing: 6.0) {
-                                Text("View All")
-                                    .foregroundColor(.white)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.white)
-                                
-                            }
-                            .padding(6.0)
-                        }
-                        .background(Color.orange)
-                        .cornerRadius(15)
+//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
+//                            HStack(spacing: 6.0) {
+//                                Text("View All")
+//                                    .foregroundColor(.white)
+//                                Image(systemName: "chevron.right")
+//                                    .foregroundColor(.white)
+//                                
+//                            }
+//                            .padding(6.0)
+//                        }
+//                        .background(Color.orange)
+//                        .cornerRadius(15)
                     }
                     .padding(.horizontal,68)
                     
@@ -210,18 +210,18 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-                            HStack(spacing: 6.0) {
-                                Text("View All")
-                                    .foregroundColor(.white)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.white)
-                                
-                            }
-                            .padding(6.0)
-                        }
-                        .background(Color.orange)
-                        .cornerRadius(15)
+//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
+//                            HStack(spacing: 6.0) {
+//                                Text("View All")
+//                                    .foregroundColor(.white)
+//                                Image(systemName: "chevron.right")
+//                                    .foregroundColor(.white)
+//                                
+//                            }
+//                            .padding(6.0)
+//                        }
+//                        .background(Color.orange)
+//                        .cornerRadius(15)
                     }
                     .padding(.horizontal,68)
                     
@@ -246,18 +246,18 @@ struct HomeView: View {
                         
                         Spacer()
                         
-                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-                            HStack(spacing: 4.0) {
-                                Text("View All")
-                                    .foregroundColor(.white)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.white)
-                                
-                            }
-                            .padding(6.0)
-                        }
-                        .background(Color.orange)
-                        .cornerRadius(15)
+//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
+//                            HStack(spacing: 4.0) {
+//                                Text("View All")
+//                                    .foregroundColor(.white)
+//                                Image(systemName: "chevron.right")
+//                                    .foregroundColor(.white)
+//                                
+//                            }
+//                            .padding(6.0)
+//                        }
+//                        .background(Color.orange)
+//                        .cornerRadius(15)
                     }
                     .padding(.horizontal,68)
                     
@@ -273,10 +273,6 @@ struct HomeView: View {
                         }
                         .padding(.horizontal,68)
                     }
-                    
-                    
-                    
-                    
                     // Become a Sitter Banner
                     becomeASitterBanner()
                 }
@@ -284,12 +280,7 @@ struct HomeView: View {
                 
             }
             .background(Color.white.opacity(0.9))
-            .navigationTitle("MoveMetric")
             .navigationBarTitleDisplayMode(.inline)
-            .navigationBarItems(trailing: NavigationLink(destination: UserProfileView()){
-                Image(systemName: "person.crop.circle")
-                    .accentColor(Color.black)
-            })
             .navigationBarBackButtonHidden(true)
 
             
@@ -323,7 +314,7 @@ struct PalsNearbyView: View {
     @State private var showFilters = false
     
     var body: some View {
-        NavigationStack {
+
             VStack {
                 HStack {
                     Menu {
@@ -355,7 +346,6 @@ struct PalsNearbyView: View {
                 }
             }
             .navigationTitle("Pals Nearby")
-        }
     }
 }
 

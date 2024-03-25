@@ -34,7 +34,7 @@ struct UserProfileView: View {
                         .background(RoundedRectangle(cornerRadius: 15)
                         .fill(Color.white)
                         .padding(.horizontal))
-                        .padding(.top,80)
+                        .padding(.top,110)
                         
                         // Booking section
                         

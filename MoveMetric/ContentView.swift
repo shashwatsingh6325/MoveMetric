@@ -6,7 +6,7 @@ class SessionConfig: ObservableObject {
     @Published var nMinutes : Int = 0
     @Published var nSeconds : Int = 1
     @Published var useReps: Bool = true
-    @Published var exercise: Exercise = exercises[0]
+    @Published var exercise: Exercise = exercises[0] // use first exercise by default but change in the ExerciseDetailsView
 }
 
 
@@ -16,13 +16,13 @@ struct ContentView: View {
     @StateObject var sessionConfig = SessionConfig()
 
     var body: some View {
-        NavigationStack(path: $viewModel.path){
+        NavigationView {
             TabView {
-                NavigationView{
+                NavigationView {
                     HomeView()
                 }
                 .tabItem {
-                    Label("Exercises", systemImage: "figure.strengthtraining.functional")
+                    Label("Home", systemImage: "house.circle.fill")
                 }
                 .tag(0)
 
@@ -31,13 +31,30 @@ struct ContentView: View {
                         Label("Reminders", systemImage: "clock")
                     }
                     .tag(1)
+
+                DetailsView()
+                    .tabItem {
+                        Label("Catalog", systemImage: "figure.run.circle.fill")
+                    }
+                    .tag(2)
+
+                UserProfileView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person.crop.circle")
+                    }
+                    .tag(3)
             }
             .accentColor(.orange)
-            .navigationViewStyle(StackNavigationViewStyle())
+            .navigationViewStyle(StackNavigationViewStyle()) // Ensure consistent navigation behavior
+            .navigationBarHidden(true) // Hide the main navigation bar
+            .navigationBarBackButtonHidden(true) // Hide back button
+            .toolbar {
+                // Add toolbar if necessary
+            }
         }
-        .navigationBarHidden(true) 
     }
 }
+
 
 struct ExerciseRowView: View {
     let exercise: Exercise
@@ -76,7 +93,6 @@ struct ExerciseRowView: View {
                     .font(.headline)
                     .foregroundColor(.black)
                     .lineLimit(1)
-                    .padding(.horizontal,7)
                 Text(palPets)
                     .font(.subheadline)
                     .foregroundColor(.black)
@@ -95,7 +111,7 @@ class ViewModel: ObservableObject {
     @Published var path = NavigationPath()
     
     func popToRoot(){
-        path.removeLast(path.count)
+        path.removeLast(path.count) // pop to root
     }
 }
 

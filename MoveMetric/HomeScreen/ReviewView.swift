@@ -18,11 +18,15 @@ struct ReviewCard: View {
                     .fontWeight(.bold)
                     .font(.headline)
                     .shadow(radius: 5)
+                    .foregroundColor(.white)
+                    .shadow(radius: 10)
                     
                 
                 Text(review.review)
                     .font(.body)
                     .shadow(radius: 5)
+                    .foregroundColor(.white)
+                    .shadow(radius: 10)
             }
         }
         .frame(width: 280, height: 110)
@@ -31,7 +35,7 @@ struct ReviewCard: View {
             Image(review.backgroundImage) // Use background image dynamically
                 .resizable()
                 .scaledToFill()
-                .opacity(0.6) // Adjust opacity as needed
+                .opacity(0.9) // Adjust opacity as needed
         )
         .cornerRadius(15)
     }
