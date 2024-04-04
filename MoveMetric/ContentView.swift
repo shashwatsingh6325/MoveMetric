@@ -16,7 +16,7 @@ struct ContentView: View {
     @StateObject var sessionConfig = SessionConfig()
 
     var body: some View {
-        NavigationView {
+        NavigationStack(path: $viewModel.path){
             TabView {
                 NavigationView {
                     HomeView()
@@ -25,6 +25,7 @@ struct ContentView: View {
                     Label("Home", systemImage: "house.circle.fill")
                 }
                 .tag(0)
+    
 
                 MainView()
                     .tabItem {
@@ -58,10 +59,18 @@ struct ContentView: View {
 
 struct ExerciseRowView: View {
     let exercise: Exercise
-//    var palName: String
     var palPets: String
     var imageName: String
     @State private var isFavorite: Bool = false
+    @Binding var favoriteExercises: [Exercise]
+    
+    init(exercise: Exercise, palPets: String, imageName: String, favoriteExercises: Binding<[Exercise]>) {
+            self.exercise = exercise
+            self.palPets = palPets
+            self.imageName = imageName
+            self._favoriteExercises = favoriteExercises
+            self._isFavorite = State(initialValue: favoriteExercises.wrappedValue.contains(exercise))
+        }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -69,7 +78,7 @@ struct ExerciseRowView: View {
                 Image(exercise.imageName)
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 150, height: 150)
+                    .frame(width: 120, height: 120)
                     .clipped()
                     .cornerRadius(8)
                     .shadow(radius:10)
@@ -77,6 +86,11 @@ struct ExerciseRowView: View {
                 
                 Button(action: {
                     isFavorite.toggle()
+                                    if isFavorite {
+                                        favoriteExercises.append(exercise)
+                                    } else {
+                                        favoriteExercises.removeAll { $0.id == exercise.id }
+                                    }
                 }) {
                     Image(systemName: isFavorite ? "heart.fill" : "heart")
                         .foregroundColor(isFavorite ? .red : .white)
@@ -99,9 +113,10 @@ struct ExerciseRowView: View {
                     .lineLimit(1)
             }.padding([.vertical],3)
         }
-        .frame(width: 150, height: 190)
+        .frame(width: 120, height: 160)
         .background(Color.clear)
         .cornerRadius(8)
+//        .shadow(radius: 2)
         
 
     }
@@ -118,5 +133,6 @@ class ViewModel: ObservableObject {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .navigationBarBackButtonHidden(true)
     }
 }

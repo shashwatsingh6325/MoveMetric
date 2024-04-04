@@ -23,7 +23,7 @@ struct PalView: View {
                     .frame(width: 150, height: 150)
                     .clipped()
                     .cornerRadius(8)
-                    .shadow(radius:10)
+//                    .shadow(radius:10)
 
                 
                 Button(action: {

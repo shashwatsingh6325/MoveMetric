@@ -32,7 +32,7 @@ struct becomeASitterBanner: View {
                     .shadow(radius: 5)
                     
                 
-                NavigationLink(destination: UserProfileView()) {
+                NavigationLink(destination: ChallangesView()) {
                     Text("Lets get started !!")
                         .bold()
                         .foregroundColor(.white)

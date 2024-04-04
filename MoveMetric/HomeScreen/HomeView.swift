@@ -12,7 +12,17 @@ struct HomeView: View {
     @State private var searchText = ""
     @StateObject var viewModel = ViewModel()
     @StateObject var sessionConfig = SessionConfig()
-
+    @State private var isSearchTapped = false
+    var filteredExercises: [Exercise] {
+            if searchText.isEmpty {
+                return exercises
+            } else {
+                return exercises.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
+            }
+        }
+    
+    @State private var favoriteExercises: [Exercise] = []
+    
     var body: some View {
         
             ScrollView {
@@ -27,11 +37,24 @@ struct HomeView: View {
                     Text("for Specific Exercises?...")
                         .padding(.horizontal,70)
                     
-                    TextField("Search here !!!", text: $searchText)
-                        .textFieldStyle(.roundedBorder)
-                        .padding()
-                        .padding(.horizontal,50)
-                        .padding(.vertical,-20)
+                    TextField("Search here !!!", text: $searchText, onEditingChanged: { editing in
+                                        isSearchTapped = editing
+                                    })
+                                    .textFieldStyle(.roundedBorder)
+                                    .padding()
+                                    .padding(.horizontal,50)
+                                    .padding(.vertical,-20)
+                    
+                    if isSearchTapped {
+                                        ForEach(filteredExercises) { exercise in
+                                            NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
+                                                .environmentObject(viewModel)
+                                                .environmentObject(sessionConfig)) {
+                                                ExerciseRowView(exercise: exercise, palPets: "", imageName: "", favoriteExercises: $favoriteExercises)
+                                            }
+                                            .padding(.horizontal, 68)
+                                        }
+                                    }
                     
                     ReviewsView()
                         .padding(.top,3)
@@ -39,17 +62,31 @@ struct HomeView: View {
                     // Services Offered Section
                     Text("Favourite Workouts")
                         .font(.headline)
-                        .foregroundColor(.black) // Text color set to white
+                        .foregroundColor(Color.primary) // Text color set to white
                         .padding(.leading)
-                        .padding(.horizontal,50)
+                        .padding(.horizontal,54)
                     
-                    HStack(spacing: -10) {
-                        ServiceView(serviceName: "Core", serviceImage: "beautiful-young-slim-woman-doing-stretching-exercises-gym-against-white-studio")
-                        ServiceView(serviceName: "Back", serviceImage: "young-beautiful-sportive-girl-training-with-dumbbells-dark-wall")
-                        ServiceView(serviceName: "Chest", serviceImage: "portrait-athletic-muscular-shirtless-middle-age-male-holds-dumbbell")
-                        ServiceView(serviceName: "Legs", serviceImage: "muscle-sexy-lighting-fitness-body")
+                    if favoriteExercises.isEmpty {
+                        Rectangle()
+                                .fill(Color.gray.opacity(0.3)) // Adjust opacity as needed
+                                .frame(width: 300, height: 110)
+                                .cornerRadius(10)
+                                .overlay(
+                                    Text("Add your favorite exercises here")
+                                        .foregroundColor(.gray)
+                                        .padding()
+                                )
+                                .padding(.horizontal, 70)
+                    } else {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 10) {
+                                ForEach(favoriteExercises) { exercise in
+                                    ExerciseRowView(exercise: exercise, palPets: "", imageName: "", favoriteExercises: $favoriteExercises)
+                                }
+                            }
+                            .padding(.horizontal, 68)
                         }
-                    .padding(.leading,50)
+                    }
                     
                     
                     // Pals Nearby Section
@@ -61,29 +98,19 @@ struct HomeView: View {
                         
                         Spacer()
                         
-//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-//                            HStack(spacing: 6.0) {
-//                                Text("View All")
-//                                    .foregroundColor(.white)
-//                                Image(systemName: "chevron.right")
-//                                    .foregroundColor(.white)
-//                                
-//                            }
-//                            .padding(6.0)
-//                        }
-//                        .background(Color.orange)
-//                        .cornerRadius(15)
+
                     }
                     .padding(.horizontal,68)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 1) {
-                            ForEach(exercises) { exercise in
+                        HStack(spacing: 10) {
+                            ForEach(exercises.prefix(6)) { exercise in
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
                                     .environmentObject(sessionConfig)) {
-                                        ExerciseRowView(exercise: exercise,palPets: "", imageName: "")
+                                        ExerciseRowView(exercise: exercise, palPets: "", imageName: "",favoriteExercises: $favoriteExercises)
                                     }
+                                
                             }
                         }
                         .padding(.horizontal,68)
@@ -96,34 +123,25 @@ struct HomeView: View {
                             .foregroundColor(Color.primary)
                         
                         Spacer()
-                        
-//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-//                            HStack(spacing: 6.0) {
-//                                Text("View All")
-//                                    .foregroundColor(.white)
-//                                Image(systemName: "chevron.right")
-//                                    .foregroundColor(.white)
-//                                
-//                            }
-//                            .padding(6.0)
-//                        }
-//                        .background(Color.orange)
-//                        .cornerRadius(15)
+
                     }
                     .padding(.horizontal,68)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 1) {
-                            ForEach(exercises) { exercise in
+                        HStack(spacing: 10) {
+                            ForEach(6..<13) { index in
+                                let exercise = exercises[index]
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
                                     .environmentObject(sessionConfig)) {
-                                        ExerciseRowView(exercise: exercise,palPets: "", imageName: "")
+                                        ExerciseRowView(exercise: exercise, palPets: "", imageName: "",favoriteExercises: $favoriteExercises)
                                     }
                             }
                         }
-                        .padding(.horizontal,68)
+                        .padding(.horizontal, 68)
                     }
+
+
                     
                     
                     HStack {
@@ -134,32 +152,22 @@ struct HomeView: View {
                         
                         Spacer()
                         
-//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-//                            HStack(spacing: 6.0) {
-//                                Text("View All")
-//                                    .foregroundColor(.white)
-//                                Image(systemName: "chevron.right")
-//                                    .foregroundColor(.white)
-//                                
-//                            }
-//                            .padding(6.0)
-//                        }
-//                        .background(Color.orange)
-//                        .cornerRadius(15)
+
                     }
                     .padding(.horizontal,68)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 1) {
-                            ForEach(exercises) { exercise in
+                        HStack(spacing: 10) {
+                            ForEach(13..<16) { index in
+                                let exercise = exercises[index]
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
                                     .environmentObject(sessionConfig)) {
-                                        ExerciseRowView(exercise: exercise,palPets: "", imageName: "")
+                                        ExerciseRowView(exercise: exercise, palPets: "", imageName: "",favoriteExercises: $favoriteExercises)
                                     }
                             }
                         }
-                        .padding(.horizontal,68)
+                        .padding(.horizontal, 68)
                     }
                     
                     
@@ -172,34 +180,24 @@ struct HomeView: View {
                         
                         Spacer()
                         
-//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-//                            HStack(spacing: 6.0) {
-//                                Text("View All")
-//                                    .foregroundColor(.white)
-//                                Image(systemName: "chevron.right")
-//                                    .foregroundColor(.white)
-//                                
-//                            }
-//                            .padding(6.0)
-//                        }
-//                        .background(Color.orange)
-//                        .cornerRadius(15)
+
                     }
                     .padding(.horizontal,68)
                     
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 1) {
-                            ForEach(exercises) { exercise in
+                        HStack(spacing: 10) {
+                            ForEach(Array(exercises[16...16]), id: \.self) { exercise in
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
                                     .environmentObject(sessionConfig)) {
-                                        ExerciseRowView(exercise: exercise,palPets: "", imageName: "")
+                                        ExerciseRowView(exercise: exercise, palPets: "", imageName: "",favoriteExercises: $favoriteExercises)
                                     }
                             }
                         }
-                        .padding(.horizontal,68)
+                        .padding(.horizontal, 68)
                     }
+
                     
                     
                     HStack {
@@ -209,33 +207,22 @@ struct HomeView: View {
                             .foregroundColor(Color.primary)
                         
                         Spacer()
-                        
-//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-//                            HStack(spacing: 6.0) {
-//                                Text("View All")
-//                                    .foregroundColor(.white)
-//                                Image(systemName: "chevron.right")
-//                                    .foregroundColor(.white)
-//                                
-//                            }
-//                            .padding(6.0)
-//                        }
-//                        .background(Color.orange)
-//                        .cornerRadius(15)
+
                     }
                     .padding(.horizontal,68)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 1) {
-                            ForEach(exercises) { exercise in
+                        HStack(spacing: 10) {
+                            ForEach(17..<20) { index in
+                                let exercise = exercises[index]
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
                                     .environmentObject(sessionConfig)) {
-                                        ExerciseRowView(exercise: exercise,palPets: "", imageName: "")
+                                        ExerciseRowView(exercise: exercise, palPets: "", imageName: "",favoriteExercises: $favoriteExercises)
                                     }
                             }
                         }
-                        .padding(.horizontal,68)
+                        .padding(.horizontal, 68)
                     }
                     
                     HStack {
@@ -246,108 +233,36 @@ struct HomeView: View {
                         
                         Spacer()
                         
-//                        NavigationLink(destination: PalsNearbyView(serviceName: "None")) {
-//                            HStack(spacing: 4.0) {
-//                                Text("View All")
-//                                    .foregroundColor(.white)
-//                                Image(systemName: "chevron.right")
-//                                    .foregroundColor(.white)
-//                                
-//                            }
-//                            .padding(6.0)
-//                        }
-//                        .background(Color.orange)
-//                        .cornerRadius(15)
                     }
                     .padding(.horizontal,68)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 1) {
-                            ForEach(exercises) { exercise in
+                        HStack(spacing: 10) {
+                            ForEach(20..<23) { index in
+                                let exercise = exercises[index]
                                 NavigationLink(destination: ExerciseDetailsView(exercise: exercise)
                                     .environmentObject(viewModel)
                                     .environmentObject(sessionConfig)) {
-                                        ExerciseRowView(exercise: exercise,palPets: "", imageName: "")
+                                        ExerciseRowView(exercise: exercise, palPets: "", imageName: "",favoriteExercises: $favoriteExercises)
                                     }
                             }
                         }
-                        .padding(.horizontal,68)
+                        .padding(.horizontal, 68)
                     }
                     // Become a Sitter Banner
                     becomeASitterBanner()
+
                 }
                 .padding(.horizontal, 300)
-                
             }
             .background(Color.white.opacity(0.9))
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarBackButtonHidden(true)
-
+            .navigationBarHidden(true)
             
         }
     }
 
-
-
-
-struct PalsNearbyView: View {
-    var serviceName: String
-    
-    let pals: [Pals] = [
-        Pals(name: "Jack Bird", pets: "Dogs, Cats", userimage:  "p1"),
-        Pals(name: "Rimi Lan", pets: "Dogs, Cats", userimage:  "p2"),
-        Pals(name: "iock Bird", pets: "Dogs, Cats", userimage:  "p3"),
-        Pals(name: "Rdemi Lan", pets: "Dogs, Cats", userimage:  "p4"),
-        Pals(name: "Jacrk Bird", pets: "Dogs, Cats", userimage:  "p5"),
-        Pals(name: "Rimie Lan", pets: "Dogs, Cats", userimage:  "p11"),
-        Pals(name: "Jack wBird", pets: "Dogs, Cats", userimage:  "p12"),
-        // ... more pals
-    ]
-    
-    // Define the grid layout
-    let columns: [GridItem] = [
-        GridItem(.flexible(), spacing: -20),
-        GridItem(.flexible(), spacing: 0)
-    ]
-    
-    // State to show/hide the filter options
-    @State private var showFilters = false
-    
-    var body: some View {
-
-            VStack {
-                HStack {
-                    Menu {
-                        Button("Cost", action: { /* Apply cost filter */ })
-                        Button("Distance", action: { /* Apply distance filter */ })
-                    } label: {
-                        Label("Filter", systemImage: "line.horizontal.3.decrease.circle")
-                            .padding(.horizontal)
-                            .padding(.vertical, 5)
-                            .background(Color.orange)
-                            .foregroundColor(.white)
-                            .cornerRadius(15)
-                    }
-                    .padding(.leading)
-                    
-                    Spacer()
-                }
-                .padding([.top, .trailing])
-                
-                
-                // List of Pals
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 0) {
-                        ForEach(pals, id: \.id) { pal in
-                            PalView(palName: pal.name, palPets: pal.pets, imageName: pal.userimage)
-                                .padding(8)
-                        }
-                    }
-                }
-            }
-            .navigationTitle("Pals Nearby")
-    }
-}
 
 struct Pals: Identifiable {
     let id = UUID()

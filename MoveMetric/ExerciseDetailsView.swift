@@ -73,8 +73,6 @@ struct ExerciseDetailsView: View {
                     .cornerRadius(8)
                 
             }
-            
-            
         }
         .navigationBarTitle(Text(exercise.name))
         .onAppear() {

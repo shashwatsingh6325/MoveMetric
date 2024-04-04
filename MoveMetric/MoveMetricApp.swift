@@ -14,7 +14,6 @@ struct Exercise: Identifiable, Hashable {
     let details: String
     let imageName: String
     let features: [QuickPose.Feature]
-    // Add more properties as needed
 }
 
 let exercises = [
@@ -35,7 +34,7 @@ let exercises = [
     Exercise(
         name: "Plank",
         details: "Hold a straight body position while resting on your forearms and toes.",
-        imageName: "plank",
+        imageName: "pushups_image",
         features: [.fitness(.plank), .overlay(.wholeBody)]
     ),
     Exercise(
@@ -110,7 +109,7 @@ let exercises = [
     Exercise(
         name: "Plank",
         details: "Hold a straight body position while resting on your forearms and toes.",
-        imageName: "plank",
+        imageName: "pushups_image",
         features: [.fitness(.plank), .overlay(.wholeBody)]
     ),
     Exercise(
@@ -134,31 +133,47 @@ let exercises = [
         imageName: "cobra_wings_image",
         features: [.fitness(.gluteBridge), .overlay(.wholeBody)]
     ),
-    Exercise(
-        name: "Hip Abduction Standing",
-        details: "Hold a straight body position while resting on your forearms and toes.",
-        imageName: "plank",
-        features: [.fitness(.plank), .overlay(.wholeBody)]
-    ),
+    
     Exercise(
         name: "Jumping Jacks",
-        details: "Lower and raise your body using your arms.",
+        details: "Jump and spread your legs and arms wide.",
         imageName: "pushups_image",
-        features: [.fitness(.pushUps), .overlay(.wholeBody)]
+        features: [.fitness(.jumpingJacks), .overlay(.wholeBody)]
     ),
     Exercise(
         name: "Leg Raises",
-        details: "Lift your upper body while lying on your stomach.",
+        details: "Raise your legs while lying on your back.",
         imageName: "cobra_wings_image",
-        features: [.fitness(.cobraWings), .overlay(.wholeBody)]
-    ),
-    Exercise(
-        name: "Lunges",
-        details: "Hold a straight body position while resting on your forearms and toes.",
-        imageName: "plank",
-        features: [.fitness(.plank), .overlay(.wholeBody)]
+        features: [.fitness(.legRaises), .overlay(.wholeBody)]
     ),
     
+    //SHOULDERS
+    Exercise(
+        name: "Front Raises",
+        details: "Lift weights in both hands in front of your body.",
+        imageName: "front_raises_image 1",
+        features: [.fitness(.frontRaises), .overlay(.wholeBody)]
+    ),
+    Exercise(
+        name: "Lateral Raises",
+        details: "Lift weights in both hands out to the sides of your body.",
+        imageName: "side_lunges_image",
+        features: [.fitness(.lateralRaises), .overlay(.wholeBody)]
+    ),
+    Exercise(
+        name: "Overhead Dumbbell Press",
+        details: "Lift weights in both hands by bending your elbows and lifting them above your head.",
+        imageName: "cobra_wings_image",
+        features: [.fitness(.overheadDumbbellPress), .overlay(.wholeBody)]
+    ),
+    
+    //Challanges
+    Exercise(
+        name: "Squats",
+        details: "Bend your knees and lower your body.",
+        imageName: "50x 1",
+        features: [.fitness(.squats), .overlay(.wholeBody)]
+    ),
 ]
 
 

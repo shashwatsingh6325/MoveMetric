@@ -6,6 +6,7 @@ struct WorkoutResultsView: View {
     @EnvironmentObject var viewModel: ViewModel
 
     var body: some View {
+        
         VStack(spacing: 20) {
             Text("Your workout results")
                 .font(.largeTitle)
@@ -30,11 +31,14 @@ struct WorkoutResultsView: View {
                     .cornerRadius(8)
             }
             .padding()
-
+            .navigationBarHidden(true)
+            
             Spacer()
         }
-        .navigationBarBackButtonHidden(true)
+        
         .padding()
         .background(Color(UIColor.systemBackground))
+        .navigationBarHidden(true)
     }
+    
 }
